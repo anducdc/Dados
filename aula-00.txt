@@ -1,0 +1,9 @@
+comandos:
+git init
+git config --local user.name "Anderson Alves"
+git config -- local.email anducdc@hotmail.com
+git status
+git push -u origin master
+
+--quando necessario
+git config credential.username "Anderson Alves"
