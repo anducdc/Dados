@@ -4,7 +4,7 @@ function calcular(){
     const altura = document.getElementById("inAltura").value;
 
     let peso;
-
+//let peso = masculino ? Math.pow(altura,2) * 22 : Math.pow(altura,2) * 21
     if(masculino){
         peso = 22 * Math.pow(altura , 2)
     } else {
@@ -12,4 +12,8 @@ function calcular(){
     }document.querySelector("h3").innerText = `Peso ideal ${peso.toFixed(2)}`;
 
     return false;
+}
+
+function limpar(){
+    document.querySelector("h3").innerText = "";
 }
