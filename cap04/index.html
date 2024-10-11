@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+</head>
+<body>
+    <h1>Lista de Exemplo e Exercícios</h1>
+    <ul>
+        <script>
+            const arquivos = [
+                "livrojs/cap01/exe1_2.html",
+                "livrojs/cap01/exe1_3.html",
+                "livrojs/cap01/exe1_4.html",
+                "livrojs/cap01/exe1_5.html",
+                "livrojs/cap01/exe1_6.html",
+                "livrojs/cap01/exe1_7.html",
+                "livrojs/cap01/resp1_7D.html",
+                "livrojs/cap01/resp1_a.html",
+                "livrojs/cap01/resp1_b.html",
+                "livrojs/cap01/resp1_c.html",
+                "livrojs/cap01/resp1_d.html",
+                "livrojs/cap02/exe2_1.html",
+                "livrojs/cap02/exe2_2.html",
+                "livrojs/cap02/exe2_3.html",
+                "livrojs/cap02/exe2_4.html",
+                "livrojs/cap02/exeA.html",
+                "livrojs/cap02/exeB.html",
+                "livrojs/cap02/exeC.html",
+                "livrojs/cap04/exe4_1.html",         
+                "livrojs/cap04/exe4_2.html",         
+                "livrojs/cap04/exe4_3.html",         
+                "livrojs/cap04/exe_A.html",
+                "livrojs/cap04/exe_B.html",
+                "livrojs/cap04/exe_C.html",
+                "livrojs/cap04/exe_D.html"
+            ];
+
+            let cap = "";
+            for(let i = 0; i < arquivos.length; i++){
+                let url = arquivos[i].split("/");
+                if(cap != url[1]){
+                    cap = url[1];
+                    document.write(`<h3>${cap.replace("cap", "Capitulo")}</h3>`);
+                }
+                let link = arquivos[i]
+                    .replace("livrojs/", "") // Remove o prefixo 'livrojs/'
+                    .replace(".html", "")
+                    .replace("exe", "Exemplo")
+                    .replace("resp", "Resposta")
+                    .replace("_",".");
+                document.write(`<li><a href="/${arquivos[i]}">${link}</a></li>`); // Adiciona barra '/' no início
+            }
+        </script>
+    </ul>
+</body>
+</html>
